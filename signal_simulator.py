@@ -148,13 +148,13 @@ class myGUI(QWidget):
 			A = self.outer_.ampSlope
 
 			if ks == 'Step':
-				if self.time_ > d:
+				if self.time_ >= d:
 					return A
 				else:
 					return 0.
 			elif ks == 'Ramp':
-				if self.time_ > d:
-					return A*self.time_
+				if self.time_ >= d:
+					return A*(self.time_ - d)
 				else:
 					return 0.
 			elif ks == 'Example Sinus':
